@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Data Provider</title>
+    <style>
+        body body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+header {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 1em;
+    text-align: center;
+}
+
+#marketData {
+    margin: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border: 1px solid #dee2e6;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+th {
+    background-color: #495057;
+    color: #ffffff;
+}
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Market Data Provider</h1>
+    </header>
+
+    <div id="marketData">
+        <table>
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Last Price</th>
+                    <th>Change</th>
+                    <th>Percent Change</th>
+                </tr>
+            </thead>
+            <tbody id="dataBody">
+                <!-- Data will be dynamically populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Function to generate random market data
+        function generateRandomData() {
+            return {
+                symbol: Math.random().toString(36).substring(2, 5).toUpperCase(),
+                lastPrice: Math.random() * 1000,
+                change: (Math.random() - 0.5) * 10,
+            };
+        }
+
+        // Function to populate market data in the table
+        function populateMarketData() {
+            const dataBody = document.getElementById('dataBody');
+            dataBody.innerHTML = '';
+
+            for (let i = 0; i < 200; i++) {
+                const randomData = generateRandomData();
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${randomData.symbol}</td>
+                    <td>${randomData.lastPrice.toFixed(2)}</td>
+                    <td>${randomData.change.toFixed(2)}</td>
+                    <td>${((randomData.change / randomData.lastPrice) * 100).toFixed(2)}%</td>
+                `;
+                dataBody.appendChild(row);
+            }
+        }
+
+        // Function to update market data every 5 seconds
+        function updateMarketData() {
+            setInterval(() => {
+                populateMarketData();
+            }, 5000);
+        }
+
+        // Initial population of market data
+        populateMarketData();
+
+        // Start updating market data
+        updateMarketData();
+    </script>
+</body>
+</html>
