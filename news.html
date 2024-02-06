@@ -3,84 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="https://i.ibb.co/x7Ckm9n/91-9656778508.png" type="image/x-icon">
-    <link rel="manifest" href="manifest.json">
-    <title>News Of Cyptro</title>
-</head>
-<style>
-    body {
-    background-color: black;
-    color: goldenrod;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #1a1a1a;
-    color: goldenrod;
-    padding: 20px;
-    text-align: center;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-}
-
-.video-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-iframe {
-    border: 2px solid goldenrod;
-    border-radius: 10px;
-    box-shadow: 0 0 10px goldenrod;
-}
-nav {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 15px 20px;
-    color: #ffd700; /* Golden color */
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background-color: #ffd700; /* Golden color */
-    color: #000;
-}
-
+    <title>Crypto News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .news-item {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .news-item h2 {
+            margin-top: 0;
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="news.html">News</a></li>
-            <li><a href="Login.html">Login</a></li>
-            
-        </ul>
-    </nav>
-<body>
-   <h1>Crypto News</h1>
+    <div class="container">
+        <h1>Crypto News</h1>
         <div id="news-container">
             <!-- News items will be loaded here -->
         </div>
@@ -108,24 +56,5 @@ nav ul li a:hover {
                 console.error('Error fetching news:', error);
             });
     </script>
-    
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="service-worker.js"></script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registered:', registration);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
-
 </body>
 </html>
