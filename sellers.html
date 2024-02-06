@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Coming Soon</title>
+</head>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 5rem;
+    line-height: 1;
+}
+
+p {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.digit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    background-color: #FFD700;
+    color: #000;
+    margin: 0 1rem;
+}
+    </style>
+<body>
+    <div class="container">
+        <h1>Sellers</h1>
+        <p>We're working hard to find Sellers!</p>
+        <div class="clock">
+            <div class="digit digit-days">00</div>
+            <div class="digit digit-hours">00</div>
+            <div class="digit digit-minutes">00</div>
+            <div class="digit digit-seconds">00</div>
+        </div>
+    </div>
+    <script>
+        const digitElements = document.querySelectorAll('.digit');
+
+function updateClock() {
+    const now = new Date();
+    const days = Math.floor(now / (1000 * 60 * 60 * 24));
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    const seconds = now.getSeconds();
+
+    digitElements[0].textContent = days;
+    digitElements[1].textContent = hours.toString().padStart(2, '0');
+    digitElements[2].textContent = minutes.toString().padStart(2, '0');
+    digitElements[3].textContent = seconds.toString().padStart(2, '0');
+}
+
+setInterval(updateClock, 1000);
+
+updateClock();
+    </script>
+</body>
+</html>
