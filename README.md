@@ -46,7 +46,7 @@ For detailed instructions on setting up and using the Trending Market Data Provi
 We welcome contributions from the community to enhance and improve the Trending Market Data Provider. If you have any ideas, bug fixes, or feature requests, please feel free to open an issue or submit a pull request.
 
 ## Support
-For any questions, feedback, or support requests related to the Trending Market Data Provider, please contact us at support@tmdprovider.com.
+For any questions, feedback, or support requests related to the Trending Market Data Provider, please contact us at support adnanmuhammad4393@gmail.com.
 
 ## License
 This project is licensed under the MIT License - see the `LICENSE` file for details.
