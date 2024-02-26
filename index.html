@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +94,7 @@ nav ul li a:hover {
         <table>
             <thead>
                 <tr>
-                    <th>Symbol</th>
+                    <th>Currency</th>
                     <th>Last Price</th>
                     <th>Change</th>
                     <th>Percent Change</th>
@@ -110,8 +109,21 @@ nav ul li a:hover {
     <script>
         // Function to generate random market data
         function generateRandomData() {
+            const symbols = [
+                "Bitcoin (BTC)", "Ethereum (ETH)", "Binance Coin (BNB)", "Cardano (ADA)", "Solana (SOL)",
+                "XRP (XRP)", "Polkadot (DOT)", "Dogecoin (DOGE)", "Avalanche (AVAX)", "Chainlink (LINK)",
+                "Litecoin (LTC)", "Stellar (XLM)", "Bitcoin Cash (BCH)", "Terra (LUNA)", "Uniswap (UNI)",
+                "Polygon (MATIC)", "Algorand (ALGO)", "VeChain (VET)", "Filecoin (FIL)", "TRON (TRX)",
+                "Monero (XMR)", "Cosmos (ATOM)", "Tezos (XTZ)", "Aave (AAVE)", "EOS (EOS)", "Neo (NEO)",
+                "Dash (DASH)", "Zcash (ZEC)", "Maker (MKR)", "Compound (COMP)", "Bitcoin SV (BSV)",
+                "Kusama (KSM)", "IOTA (MIOTA)", "Waves (WAVES)", "Synthetix (SNX)", "Huobi Token (HT)",
+                "Ethereum Classic (ETC)", "The Graph (GRT)", "SushiSwap (SUSHI)", "THETA (THETA)",
+                "PancakeSwap (CAKE)", "Fantom (FTM)", "Decred (DCR)", "Ontology (ONT)", "Curve DAO Token (CRV)",
+                "0x (ZRX)", "Chiliz (CHZ)", "Ren (REN)", "Basic Attention Token (BAT)", "Enjin Coin (ENJ)"
+            ];
+            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
             return {
-                symbol: Math.random().toString(36).substring(2, 5).toUpperCase(),
+                symbol: randomSymbol,
                 lastPrice: Math.random() * 1000,
                 change: (Math.random() - 0.5) * 10,
             };
@@ -168,3 +180,4 @@ nav ul li a:hover {
 
 </body>
 </html>
+
