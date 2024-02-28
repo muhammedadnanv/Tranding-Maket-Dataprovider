@@ -134,6 +134,20 @@ button:hover {
   
 </div>
 <!-- partial -->
-  
+     <script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(registration => {
+          console.log('Service Worker registered:', registration);
+        })
+        .catch(error => {
+          console.error('Service Worker registration failed:', error);
+        });
+    });
+  }
+</script>
+  <script src="app.js"></script>
+<script src="service-worker.js"></script>
 </body>
 </html>
