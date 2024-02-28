@@ -3,125 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptocurrency Sellers or Platforms</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/darkly/bootstrap.min.css">
+    ">
     <link rel="stylesheet" href="style.css">
-    <title>Coming Soon</title>
-</head>
     <style>
-        body {
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: #FFD700;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
-.container {
-    text-align: center;
-}
-
-h1 {
-    font-size: 5rem;
-    line-height: 1;
-}
-
-p {
-    font-size: 2rem;
-    margin-bottom: 2rem;
-}
-
-.clock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 6rem;
-    font-weight: bold;
-    margin-top: 2rem;
-}
-
-.digit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 8rem;
-    height: 8rem;
-    border-radius: 50%;
-    background-color: #FFD700;
-    color: #000;
-    margin: 0 1rem;
-}
-        nav {
-    background-color: #333;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #FFD700;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav ul li a:hover {
-    background-color: #555;
-}
-        
+        .cryptoBox {
+            text-align: center;
+            margin-bottom: 20px;
+        }
     </style>
+
+</head>
 <body>
-      <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            
-            <li><a href="Login.html">Login</a></li>
-            
-        </ul>
-    </nav>
     <div class="container">
-        <h1>Sellers</h1>
-        <p>We're working hard to find Sellers!</p>
-        <div class="clock">
-            <div class="digit digit-days">00</div>
-            <div class="digit digit-hours">00</div>
-            <div class="digit digit-minutes">00</div>
-            <div class="digit digit-seconds">00</div>
+        <h1 class="mt-5">Cryptocurrency Platforms for Purchase and Sell</h1>
+        <div id="cryptoContainer" class="row">
+            <!-- Cryptocurrency sellers or platforms will be dynamically generated here -->
         </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
-        const digitElements = document.querySelectorAll('.digit');
+        const cryptoWebsites = [
+            { name: "Bitcoin", url: "https://bitcoin.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Ethereum", url: "https://ethereum.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Binance", url: "https://www.binance.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Coinbase", url: "https://www.coinbase.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Kraken", url: "https://www.kraken.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Ripple", url: "https://ripple.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Litecoin", url: "https://litecoin.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Cardano", url: "https://cardano.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Polkadot", url: "https://polkadot.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Chainlink", url: "https://chain.link/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Stellar", url: "https://www.stellar.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "VeChain", url: "https://www.vechain.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Tron", url: "https://tron.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Tezos", url: "https://tezos.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            // Add more sellers or platforms
+            { name: "Dash", url: "https://www.dash.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Neo", url: "https://neo.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Ethereum Classic", url: "https://ethereumclassic.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Monero", url: "https://www.getmonero.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "EOS", url: "https://eos.io/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Zcash", url: "https://www.zcashcommunity.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Cosmos", url: "https://cosmos.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "IOTA", url: "https://www.iota.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+            { name: "Kraken", url: "https://www.kraken.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Ripple", url: "https://ripple.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Litecoin", url: "https://litecoin.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Cardano", url: "https://cardano.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Polkadot", url: "https://polkadot.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Chainlink", url: "https://chain.link/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Stellar", url: "https://www.stellar.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "VeChain", url: "https://www.vechain.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Tron", url: "https://tron.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Tezos", url: "https://tezos.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    // Add more sellers or platforms
+    { name: "Dash", url: "https://www.dash.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Neo", url: "https://neo.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Ethereum Classic", url: "https://ethereumclassic.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Monero", url: "https://www.getmonero.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "EOS", url: "https://eos.io/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Zcash", url: "https://www.zcashcommunity.com/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "Cosmos", url: "https://cosmos.network/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+    { name: "IOTA", url: "https://www.iota.org/", image: "https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" },
+        ];
 
-function updateClock() {
-    const now = new Date();
-    const days = Math.floor(now / (1000 * 60 * 60 * 24));
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
+        const container = document.getElementById('cryptoContainer');
 
-    digitElements[0].textContent = days;
-    digitElements[1].textContent = hours.toString().padStart(2, '0');
-    digitElements[2].textContent = minutes.toString().padStart(2, '0');
-    digitElements[3].textContent = seconds.toString().padStart(2, '0');
-}
+        cryptoWebsites.forEach(website => {
+            const cryptoBox = document.createElement('div');
+            cryptoBox.classList.add('col-md-4', 'cryptoBox');
+            
+            const button = document.createElement('a');
+            button.textContent = website.name;
+            button.href = website.url;
+            button.classList.add('btn', 'btn-primary', 'btn-block');
+            
+            const image = document.createElement('img');
+            image.src = website.image;
+            image.alt = website.name;
+            image.classList.add('img-fluid');
 
-setInterval(updateClock, 1000);
+            cryptoBox.appendChild(image);
+            cryptoBox.appendChild(button);
 
-updateClock();
+            container.appendChild(cryptoBox);
+        });
     </script>
 </body>
 </html>
