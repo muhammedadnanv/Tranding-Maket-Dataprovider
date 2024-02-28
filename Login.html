@@ -2,96 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS with customized theme -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Font Awesome -->
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel="stylesheet" href="./style.css">
   <link rel="shortcut icon" href="https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" type="image/x-icon">
-  <style>
-    body {
-      background-color: #161615; /* Set background color to golden */
-      color: #e4c70b; /* Set text color to black */
-    }
-    .login-form {
-      margin-top: 100px;
-    }
-    .field {
-      position: relative;
-      margin-bottom: 20px;
-    }
-    .field input {
-      height: 50px;
-      font-size: 19px;
-      color: #868686;
-      padding-left: 50px;
-      border-radius: 5px;
-      border: 1px solid #444;
-      caret-color: #339933;
-      background: linear-gradient(#333, #222);
-    }
-    .field .input-icon {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 15px;
-      color: #868686;
-    }
-    button {
-      height: 50px;
-      font-size: 19px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .link {
-      margin-top: 25px;
-      color: #868686;
-    }
-    .link a {
-      color: #58b22b;
-    }
-  </style>
 </head>
+<style>
+  @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+  body {
+    background-color: #161615; /* Set background color to golden */
+    color: #e4c70b; /* Set text color to black */
+    font-family: "Poppins", sans-serif;
+  }
+  .login-form {
+    position: relative;
+    width: 370px;
+    height: auto;
+    background: #1b1b1b;
+    padding: 40px 35px 60px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: inset 0 0 1px #272727;
+    margin: 0 auto; /* Center the form */
+    margin-top: 100px; /* Adjust top margin */
+  }
+  .text {
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 40px; /* Add some space below */
+  }
+  .field {
+    margin-top: 20px;
+    display: flex;
+  }
+  .field .fas {
+    height: 50px;
+    width: 60px;
+    color: #868686;
+    font-size: 20px;
+    line-height: 50px;
+    border: 1px solid #444;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+    background: linear-gradient(#333, #222);
+  }
+  .field input,
+  form button {
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 19px;
+    color: #868686;
+    padding: 0 15px;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #444;
+    caret-color: #339933;
+    background: linear-gradient(#333, #222);
+  }
+  input:focus {
+    color: #339933;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 255, 0, 0.1);
+    background: linear-gradient(#333933, #222922);
+    animation: glow 0.8s ease-out infinite alternate;
+  }
+  @keyframes glow {
+    0% {
+      border-color: #339933;
+      box-shadow: 0 0 5px rgba(0, 255, 0, 0.2), inset 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    100% {
+      border-color: #6f6;
+      box-shadow: 0 0 20px rgba(0, 255, 0, 0.6),
+        inset 0 0 10px rgba(0, 255, 0, 0.4);
+    }
+  }
+  button {
+    margin-top: 30px;
+    border-radius: 5px !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  button:hover {
+    color: #339933;
+    border: 1px solid #339933;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3), 0 0 10px rgba(0, 255, 0, 0.2),
+      0 0 15px rgba(0, 255, 0, 0.1), 0 2px 0 black;
+  }
+  .link {
+    margin-top: 25px;
+    color: #868686;
+    text-align: center;
+  }
+  .link a {
+    color: #58b22b;
+    text-decoration: none;
+  }
+</style>
 <body>
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-4 login-form">
-      <h2 class="text-center mb-4">LOGIN</h2>
+    <div class="col-md-6 login-form">
+      <div class="text">
+        LOGIN
+      </div>
       <form action="https://formspree.io/f/xvoekwkz" method="POST">
         <div class="field">
-          <span class="input-icon fas fa-envelope"></span>
-          <input type="text" name="email" class="form-control" placeholder="Email or Phone">
+          <div class="fas fa-user"></div>
+          <input type="text" name="username" placeholder="Username">
         </div>
         <div class="field">
-          <span class="input-icon fas fa-lock"></span>
-          <input type="password" name="password" class="form-control" placeholder="Password">
+          <div class="fas fa-envelope"></div>
+          <input type="email" name="email" placeholder="Email">
         </div>
-        <button type="submit" class="btn btn-primary btn-block">LOGIN</button>
-        <div class="link text-center mt-3">
-          Not a member? <a href="signup.html">Signup now</a>
+        <div class="field">
+          <div class="fas fa-phone"></div>
+          <input type="tel" name="phone" placeholder="Mobile Number">
+        </div>
+        <div class="field">
+          <div class="fas fa-lock"></div>
+          <input type="password" name="password" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">SIGN UP</button>
+        <div class="link">
+          Already have an account? <a href="Login.html">Login</a>
         </div>
       </form>
     </div>
   </div>
 </div>
-<script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registered:', registration);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
-</script>
-<script src="app.js"></script>
-<script src="service-worker.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
 </body>
 </html>
