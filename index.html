@@ -205,26 +205,6 @@ window.addEventListener('load', () => {
 });
 }
 </script>
-     <script>
-        // Function to show the alert and redirect
-        function showAlertAndRedirect() {
-            // Check if the user has already seen the notification
-            if (!localStorage.getItem('notificationShown')) {
-                // Display the alert with the welcome message
-                alert("Welcome to Market Data Provider!\nYou're being redirected to the login page.");
-                
-                // Set a flag indicating that the notification has been shown
-                localStorage.setItem('notificationShown', true);
-            }
 
-            // Redirect to the login page after a delay
-            setTimeout(function() {
-                window.location.href = "Login.html";
-            }, 1); // Adjust the delay time as needed (in milliseconds)
-        }
-
-        // Call the function to show the alert and redirect when the page loads
-        window.onload = showAlertAndRedirect;
-    </script>
 </body>
 </html>
