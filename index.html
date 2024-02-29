@@ -3,182 +3,195 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Market Data Provider</title>
+    <title>Trader Dashboard</title>
     <link rel="shortcut icon" href="https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" type="image/x-icon">
     <link rel="manifest" href="manifest.json">
     <style>
-      body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-}
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('trader-background.jpg'); /* Replace with your trader background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: #fff;
+        }
 
-header {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-    padding: 1em;
-    text-align: center;
-}
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffd700; /* Golden color */
+            padding: 1em;
+            text-align: center;
+        }
 
-#marketData {
-    margin: 20px;
-}
+        #marketData {
+            margin: 20px;
+        }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    border: 1px solid #ffd700; /* Golden color */
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border: 1px solid #ffd700; /* Golden color */
+        }
 
-th, td {
-    padding: 12px;
-    text-align: left;
-    border-bottom: 1px solid #ffd700; /* Golden color */
-}
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ffd700; /* Golden color */
+        }
 
-th {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-}
+        th {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffd700; /* Golden color */
+        }
 
-td {
-    background-color: #000;
-}
-nav {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-}
+        td {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
 
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
+        nav {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #ffd700; /* Golden color */
+            padding: 10px 0;
+            text-align: center;
+        }
 
-nav ul li {
-    display: inline;
-}
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-nav ul li a {
-    display: inline-block;
-    padding: 15px 20px;
-    color: #ffd700; /* Golden color */
-    text-decoration: none;
-}
+        nav ul li {
+            display: inline;
+        }
 
-nav ul li a:hover {
-    background-color: #ffd700; /* Golden color */
-    color: #000;
-}
+        nav ul li a {
+            display: inline-block;
+            padding: 15px 20px;
+            color: #ffd700; /* Golden color */
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffd700; /* Golden color */
+            color: #000;
+        }
 
     </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="sellers.html">Sellers</a></li>
-            <li><a href="Login.html">Login</a></li>
-           
-           
-        </ul>
-    </nav>
-    <header>
-        <h1>Market Data Provider</h1>
-    </header>
+<nav>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="sellers.html">Sellers</a></li>
+        <li><a href="Login.html">Login</a></li>
+    </ul>
+</nav>
+<header>
+    <h1>Trader Dashboard</h1>
+</header>
 
-    <div id="marketData">
-        <table>
-            <thead>
-                <tr>
-                    <th>Currency</th>
-                    <th>Last Price</th>
-                    <th>Change</th>
-                    <th>Percent Change</th>
-                </tr>
-            </thead>
-            <tbody id="dataBody">
-                <!-- Data will be dynamically populated here -->
-            </tbody>
-        </table>
-    </div>
+<div id="marketData">
+    <table>
+        <thead>
+        <tr>
+            <th>Asset</th>
+            <th>Last Price</th>
+            <th>Change</th>
+            <th>Percent Change</th>
+        </tr>
+        </thead>
+        <tbody id="dataBody">
+        <!-- Data will be dynamically populated here -->
+        </tbody>
+    </table>
+</div>
 
-    <script>
-        // Function to generate random market data
-        function generateRandomData() {
-            const symbols = [
-                "Bitcoin (BTC)", "Ethereum (ETH)", "Binance Coin (BNB)", "Cardano (ADA)", "Solana (SOL)",
-                "XRP (XRP)", "Polkadot (DOT)", "Dogecoin (DOGE)", "Avalanche (AVAX)", "Chainlink (LINK)",
-                "Litecoin (LTC)", "Stellar (XLM)", "Bitcoin Cash (BCH)", "Terra (LUNA)", "Uniswap (UNI)",
-                "Polygon (MATIC)", "Algorand (ALGO)", "VeChain (VET)", "Filecoin (FIL)", "TRON (TRX)",
-                "Monero (XMR)", "Cosmos (ATOM)", "Tezos (XTZ)", "Aave (AAVE)", "EOS (EOS)", "Neo (NEO)",
-                "Dash (DASH)", "Zcash (ZEC)", "Maker (MKR)", "Compound (COMP)", "Bitcoin SV (BSV)",
-                "Kusama (KSM)", "IOTA (MIOTA)", "Waves (WAVES)", "Synthetix (SNX)", "Huobi Token (HT)",
-                "Ethereum Classic (ETC)", "The Graph (GRT)", "SushiSwap (SUSHI)", "THETA (THETA)",
-                "PancakeSwap (CAKE)", "Fantom (FTM)", "Decred (DCR)", "Ontology (ONT)", "Curve DAO Token (CRV)",
-                "0x (ZRX)", "Chiliz (CHZ)", "Ren (REN)", "Basic Attention Token (BAT)", "Enjin Coin (ENJ)"
-            ];
-            const randomSymbol = symbols[Math.floor(Math.random() * symbols.length)];
-            return {
-                symbol: randomSymbol,
-                lastPrice: Math.random() * 1000,
-                change: (Math.random() - 0.5) * 10,
-            };
-        }
+<script>
+    // Function to generate random market data
+    function generateRandomData() {
+        const assets = [
+            "Bitcoin (BTC)", "Ethereum (ETH)", "Binance Coin (BNB)", "Cardano (ADA)", "Solana (SOL)",
+            "XRP (XRP)", "Polkadot (DOT)", "Dogecoin (DOGE)", "Avalanche (AVAX)", "Chainlink (LINK)",
+            "Litecoin (LTC)", "Stellar (XLM)", "Bitcoin Cash (BCH)", "Terra (LUNA)", "Uniswap (UNI)",
+            "Polygon (MATIC)", "Algorand (ALGO)", "VeChain (VET)", "Filecoin (FIL)", "TRON (TRX)",
+            "Monero (XMR)", "Cosmos (ATOM)", "Tezos (XTZ)", "Aave (AAVE)", "EOS (EOS)", "Neo (NEO)",
+            "Dash (DASH)", "Zcash (ZEC)", "Maker (MKR)", "Compound (COMP)", "Bitcoin SV (BSV)",
+            "Kusama (KSM)", "IOTA (MIOTA)", "Waves (WAVES)", "Synthetix (SNX)", "Huobi Token (HT)",
+            "Ethereum Classic (ETC)", "The Graph (GRT)", "SushiSwap (SUSHI)", "THETA (THETA)",
+            "PancakeSwap (CAKE)", "Fantom (FTM)", "Decred (DCR)", "Ontology (ONT)", "Curve DAO Token (CRV)",
+            "0x (ZRX)", "Chiliz (CHZ)", "Ren (REN)", "Basic Attention Token (BAT)", "Enjin Coin (ENJ)",
+            // Add more cryptocurrencies here...
+            "Ripple (XRP)", "Litecoin (LTC)", "EOS (EOS)", "Tezos (XTZ)", "VeChain (VET)",
+            "Tron (TRX)", "Neo (NEO)", "Dash (DASH)", "Zcash (ZEC)", "Maker (MKR)",
+            "Compound (COMP)", "Bitcoin SV (BSV)", "Kusama (KSM)", "IOTA (MIOTA)", "Waves (WAVES)",
+            "Synthetix (SNX)", "Huobi Token (HT)", "Ethereum Classic (ETC)", "The Graph (GRT)",
+            "SushiSwap (SUSHI)", "THETA (THETA)", "PancakeSwap (CAKE)", "Fantom (FTM)",
+            "Decred (DCR)", "Ontology (ONT)", "Curve DAO Token (CRV)", "0x (ZRX)", "Chiliz (CHZ)",
+            "Ren (REN)", "Basic Attention Token (BAT)", "Enjin Coin (ENJ)", "Tether (USDT)",
+            "USD Coin (USDC)", "Binance USD (BUSD)", "Dai (DAI)", "Paxos Standard (PAX)",
+            "TrueUSD (TUSD)", "Gemini Dollar (GUSD)", "HUSD (HUSD)", "Sai (SAI)", "Tether Gold (XAUT)",
+            "Paxos Gold (PAXG)", "Wrapped Bitcoin (WBTC)", "Bitcoin Cash ABC (BCHA)", "Bitcoin Gold (BTG)",
+            "Bitcoin Diamond (BCD)", "Bitcoin SV (BSV)", "Bitcoin Private (BTCP)", "Bitcoin Diamond (BCD)"
+        ];
+        const randomAsset = assets[Math.floor(Math.random() * assets.length)];
+        return {
+            asset: randomAsset,
+            lastPrice: Math.random() * 1000,
+            change: (Math.random() - 0.5) * 10,
+        };
+    }
 
-        // Function to populate market data in the table
-        function populateMarketData() {
-            const dataBody = document.getElementById('dataBody');
-            dataBody.innerHTML = '';
+    // Function to populate market data in the table
+    function populateMarketData() {
+        const dataBody = document.getElementById('dataBody');
+        dataBody.innerHTML = '';
 
-            for (let i = 0; i < 200; i++) {
-                const randomData = generateRandomData();
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${randomData.symbol}</td>
-                    <td>${randomData.lastPrice.toFixed(2)}</td>
+        for (let i = 0; i < 10; i++) { // Reduced the number of rows for better visibility
+            const randomData = generateRandomData();
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                    <td>${randomData.asset}</td>
+                    <td>$${randomData.lastPrice.toFixed(2)}</td>
                     <td>${randomData.change.toFixed(2)}</td>
                     <td>${((randomData.change / randomData.lastPrice) * 100).toFixed(2)}%</td>
                 `;
-                dataBody.appendChild(row);
-            }
+            dataBody.appendChild(row);
         }
+    }
 
-        // Function to update market data every 5 seconds
-        function updateMarketData() {
-            setInterval(() => {
-                populateMarketData();
-            }, 5000);
-        }
+    // Function to update market data every 5 seconds
+    function updateMarketData() {
+        setInterval(() => {
+            populateMarketData();
+        }, 5000);
+    }
 
-        // Initial population of market data
-        populateMarketData();
+    // Initial population of market data
+    populateMarketData();
 
-        // Start updating market data
-        updateMarketData();
-    </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="service-worker.js"></script>
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(registration => {
-          console.log('Service Worker registered:', registration);
-        })
-        .catch(error => {
-          console.error('Service Worker registration failed:', error);
-        });
-    });
-  }
+    // Start updating market data
+    updateMarketData();
 </script>
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="service-worker.js"></script>
+<script>
+if ('serviceWorker' in navigator) {
+window.addEventListener('load', () => {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(registration => {
+      console.log('Service Worker registered:', registration);
+    })
+    .catch(error => {
+      console.error('Service Worker registration failed:', error);
+    });
+});
+}
+</script>
 </body>
 </html>
-
