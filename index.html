@@ -78,7 +78,19 @@
             background-color: #ffd700; /* Golden color */
             color: #000;
         }
-
+ #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            z-index: 9999;
+        }
+        
     </style>
 </head>
 <body>
@@ -93,7 +105,26 @@
 <header>
     <h1>Trader Dashboard</h1>
 </header>
+   <div id="popup">
+        <h2>Welcome to Market Data Provider!</h2>
+        <p>You're being redirected to the login page of Market Data Provider.</p>
+    </div>
 
+    <script>
+        // Function to show the popup message and redirect
+        function showPopupAndRedirect() {
+            var popup = document.getElementById("popup");
+            popup.style.display = "block";
+
+            // Redirect to the login page after a delay
+            setTimeout(function() {
+                window.location.href = "login.html";
+            }, 3000); // Adjust the delay time as needed (in milliseconds)
+        }
+
+        // Call the function to show the popup message and redirect when the page loads
+        window.onload = showPopupAndRedirect;
+    </script>
 <div id="marketData">
     <table>
         <thead>
