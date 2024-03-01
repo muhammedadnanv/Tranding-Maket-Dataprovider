@@ -6,107 +6,130 @@
     <title>About Market Data Provider</title>
     <link rel="manifest" href="manifest.json">
     <link rel="shortcut icon" href="https://i.ibb.co/sqFtmKj/Screenshot-2024-02-28-183458.png" type="image/x-icon">
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #ffd700;
+        }
+
+        nav {
+            background-color: #000 !important;
+        }
+
+        nav .navbar-brand {
+            color: #ffd700 !important;
+        }
+
+        nav .navbar-nav .nav-link {
+            color: #ffd700 !important;
+        }
+
+        nav .navbar-nav .nav-link:hover {
+            color: #000 !important;
+            background-color: #ffd700 !important;
+        }
+
+        .container {
+            background-color: #000;
+            color: #ffd700;
+            border: 1px solid #ffd700;
+            border-radius: 5px;
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .container a {
+            color: #ffd700;
+        }
+
+        .container a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .referral-link {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .referral-link a {
+            color: #ffd700;
+        }
+
+        .referral-link a:hover {
+            color: #000;
+            text-decoration: underline;
+        }
+
+        .share-buttons {
+            margin-top: 20px;
+        }
+
+        .share-buttons .btn {
+            color: #000 !important;
+        }
+    </style>
 </head>
-<style>
-    body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-    padding: 1em;
-    text-align: center;
-}
-
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-.container p {
-    margin-bottom: 20px;
-}
-    nav {
-    background-color: #000;
-    color: #ffd700; /* Golden color */
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    display: inline-block;
-    padding: 15px 20px;
-    color: #ffd700; /* Golden color */
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    background-color: #ffd700; /* Golden color */
-    color: #000;
-}
-
-
-</style>
 <body>
-  <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="sellers.html">sellers</a></li>
-            <li><a href="Login.html">Login</a></li>
-            
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Market Data Provider</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sellers.html">Sellers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </nav>
-    <header>
-        <h1>About Market Data Provider</h1>
-    </header>
 
     <div class="container">
+        <h1 class="mt-5 text-center">About Market Data Provider</h1>
         <p>Welcome to the Market Data Provider for cryptocurrency!</p>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/aezcZxxi9bk?si=fCiUDZ57HrXBotJU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         <p>Our platform provides real-time market data for various cryptocurrencies, including Bitcoin, Ethereum, Litecoin, and more.</p>
         <p>With our easy-to-use interface, you can stay updated on the latest prices, trends, and news in the cryptocurrency market.</p>
         <p>Whether you're a seasoned trader or a newcomer to the world of cryptocurrency, our Market Data Provider has the tools and information you need to make informed decisions.</p>
-        <p>Stay ahead of the curve and maximize your trading potential with our comprehensive market data solutions.</p>
-        <p>Our team of experts continuously monitors the cryptocurrency market to ensure that you have access to the most accurate and up-to-date information.</p>
-        <p>Our goal is to empower traders and investors with the knowledge and insights they need to succeed in the fast-paced world of cryptocurrency.</p>
-        <p>Join thousands of satisfied users who rely on our Market Data Provider to navigate the cryptocurrency market with confidence.</p>
-        <p>Start making smarter investment decisions today with our reliable and comprehensive market data solutions.</p>
-        <p>Experience the difference with our Market Data Provider and take your cryptocurrency trading to the next level!</p>
-        <p>At Market Data Provider, we're committed to delivering excellence in cryptocurrency market data services.</p>
-        <p>Our user-friendly platform is designed to meet the needs of both novice and experienced traders alike.</p>
-        <p>With our reliable data and insightful analysis, you'll have the edge you need to succeed in the competitive world of cryptocurrency trading.</p>
-        <p>Join our community of traders and investors today and unlock the full potential of cryptocurrency market data!</p>
-        <p>Whether you're looking to buy, sell, or hodl, our Market Data Provider has you covered.</p>
-        <p>Don't miss out on the latest trends and opportunities in the cryptocurrency market – sign up with Market Data Provider today!</p>
-        <p>Stay informed, stay ahead, and stay profitable with Market Data Provider.</p>
-        <p>Trust Market Data Provider to provide you with the insights and analysis you need to succeed in the cryptocurrency market.</p>
-        <p>With our comprehensive market data solutions, you'll never miss a beat in the fast-paced world of cryptocurrency trading.</p>
-        <p>Join us on our mission to democratize access to cryptocurrency market data and empower traders around the world.</p>
-        
-    </div>
-    <div>
-  
- 
+        <!-- Add more paragraphs here -->
     </div>
 
-    <script src="app.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <div class="container referral-link">
+        <p>Invite your friends to use our app and earn rewards! <a href="https://tranding-maket-dataprovider.vercel.app/" target="_blank">Click here to share your referral link.</a></p>
+    </div>
+
+    <div class="container share-buttons">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <a href="whatsapp://send?text=Check out this awesome Market Data Provider app for cryptocurrency: https://tranding-maket-dataprovider.vercel.app/" class="btn btn-success btn-block" target="_blank">Share on WhatsApp</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://tranding-maket-dataprovider.vercel.app/" class="btn btn-primary btn-block" target="_blank">Share on Facebook</a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://www.instagram.com/?url=https://tranding-maket-dataprovider.vercel.app/" class="btn btn-danger btn-block" target="_blank">Share on Instagram</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="service-worker.js"></script>
 </body>
 </html>
