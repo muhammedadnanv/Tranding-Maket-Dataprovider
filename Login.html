@@ -113,7 +113,7 @@
       <div class="text">
         LOGIN
       </div>
-      <form action="https://formbold.com/s/3jBRB" method="POST">
+      <form id="loginForm" action="https://formbold.com/s/3jBRB" method="POST" onsubmit="return handleSubmit()">
         <div class="field">
           <div class="fas fa-user"></div>
           <input type="text" name="username" placeholder="Username">
@@ -133,13 +133,24 @@
         <button type="submit" class="btn btn-primary btn-block">SIGN UP</button>
         <div class="link">
           Already have an account? <a href="Login.html">Login</a>
+          <br>
            <a href="https://www.buymeacoffee.com/muhammedadan"><img src="https://img.buymeacoffee.com/button-api/?text=Oru chai tharumo ?&emoji=&slug=muhammedadan&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" /></a>
         </div>
       </form>
     </div>
   </div>
 </div>
-</body>
-</html>
+
+<script>
+  function handleSubmit() {
+    // You can add validation logic here if needed
+    
+    // Redirecting to index.html after form submission
+    window.location.href = "index.html";
+    
+    // Returning false to prevent form submission (remove this line if you want the form to submit normally)
+    return false;
+  }
+</script>
 </body>
 </html>
