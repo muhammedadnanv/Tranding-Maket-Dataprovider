@@ -110,23 +110,48 @@
     </div>
 
     <div class="container referral-link">
-        <p>Invite your friends to use our app and earn rewards! <a href="https://tranding-maket-dataprovider.vercel.app/" target="_blank">Click here to share your referral link.</a></p>
+        <p>Invite your friends to use our app and make More Downloads <a href="https://muhammedadnanv.github.io/Tranding-Maket-Dataprovider/" target="_blank">Click here to share your referral link.</a></p>
+        <p id="visitCount">Total Visits: <span id="count">0</span></p>
     </div>
 
     <div class="container share-buttons">
         <div class="row justify-content-center">
             <div class="col-md-4">
-                <a href="whatsapp://send?text=Check out this awesome Market Data Provider app for cryptocurrency: https://tranding-maket-dataprovider.vercel.app/" class="btn btn-success btn-block" target="_blank">Share on WhatsApp</a>
+                <a href="whatsapp://send?text=Check out this awesome Market Data Provider app for cryptocurrency: https://muhammedadnanv.github.io/Tranding-Maket-Dataprovider/" class="btn btn-success btn-block" target="_blank">Share on WhatsApp</a>
             </div>
             <div class="col-md-4">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://tranding-maket-dataprovider.vercel.app/" class="btn btn-primary btn-block" target="_blank">Share on Facebook</a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u=https://muhammedadnanv.github.io/Tranding-Maket-Dataprovider/" class="btn btn-primary btn-block" target="_blank">Share on Facebook</a>
             </div>
             <div class="col-md-4">
-                <a href="https://www.instagram.com/?url=https://tranding-maket-dataprovider.vercel.app/" class="btn btn-danger btn-block" target="_blank">Share on Instagram</a>
+                <a href="https://www.instagram.com/?url=https://muhammedadnanv.github.io/Tranding-Maket-Dataprovider/" class="btn btn-danger btn-block" target="_blank">Share on Instagram</a>
             </div>
         </div>
     </div>
+ <script>
+        // Function to update and display visit count
+        function updateVisitCount() {
+            // Check if localStorage is supported
+            if (typeof(Storage) !== "undefined") {
+                // Retrieve current visit count from localStorage
+                var count = localStorage.getItem("visitCount");
+                
+                // If count is null (first time), set it to 1, otherwise increment it
+                count = (count === null) ? 1 : parseInt(count) + 1;
+                
+                // Update visit count in localStorage
+                localStorage.setItem("visitCount", count);
+                
+                // Display visit count on the page
+                document.getElementById("count").textContent = count;
+            } else {
+                // If localStorage is not supported, display a message
+                document.getElementById("visitCount").textContent = "Sorry, your browser does not support local storage.";
+            }
+        }
 
+        // Call the function to update and display visit count
+        updateVisitCount();
+    </script>
     <!-- Bootstrap JS and dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
